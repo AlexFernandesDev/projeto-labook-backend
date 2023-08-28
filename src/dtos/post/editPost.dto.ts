@@ -6,7 +6,7 @@ export interface EditPostInputDTO {
     idToEdit: string
 }
 
-export type EditPostDTO = undefined
+export type EditPostOutputDTO = undefined
 
 export const EditPostSchema = z.object({
     content: z.string().min(1).max(500),
