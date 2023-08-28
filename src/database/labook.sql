@@ -10,13 +10,8 @@ CREATE TABLE users (
 
 INSERT INTO users (id, name, email, password, role)
 VALUES
-  -- tipo NORMAL e senha = fulano123
 	('u001', 'Fulano', 'fulano@email.com', '$2a$12$qPQj5Lm1dQK2auALLTC0dOWedtr/Th.aSFf3.pdK5jCmYelFrYadC', 'NORMAL'),
-
-  -- tipo NORMAL e senha = beltrana00
 	('u002', 'Beltrana', 'beltrana@email.com', '$2a$12$403HVkfVSUbDioyciv9IC.oBlgMqudbnQL8ubebJIXScNs8E3jYe2', 'NORMAL'),
-
-  -- tipo ADMIN e senha = astrodev99
 	('u003', 'Astrodev', 'astrodev@email.com', '$2a$12$lHyD.hKs3JDGu2nIbBrxYujrnfIX5RW5oq/B41HCKf7TSaq9RgqJ.', 'ADMIN');
 
 CREATE TABLE posts (
@@ -38,7 +33,7 @@ VALUES
     ('p002', 'u001', 'text'),
     ('p003', 'u003', 'text');
 
-CREATE TABLE likes_deslikes (
+CREATE TABLE likes_dislikes (
     user_id TEXT NOT NULL,
     post_id TEXT NOT NULL,
     like INTEGER NOT NULL,
@@ -50,7 +45,7 @@ CREATE TABLE likes_deslikes (
         ON DELETE CASCADE
 );
 
-INSERT INTO likes_deslikes (user_id, post_id, like)
+INSERT INTO likes_dislikes (user_id, post_id, like)
 VALUES 
     ('u002', 'p001', 1),
     ('u003', 'p001', 1),
