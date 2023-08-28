@@ -14,7 +14,7 @@ export class UserBusiness {
         private idGenerator: IdGenerator,
         private tokenManager: TokenManager,
         private hashManager: HashManager
-    ){}
+    ) { }
 
     public signup = async (input: SignupInputDTO): Promise<SignupOutputDTO> => {
         const { name, email, password } = input
@@ -24,12 +24,12 @@ export class UserBusiness {
         const hashedPassword = await this.hashManager.hash(password)
 
         const user = new User(
-           id,
-           name,
-           email,
-           hashedPassword,
-           USER_ROLES.NORMAL,
-           new Date().toISOString() 
+            id,
+            name,
+            email,
+            hashedPassword,
+            USER_ROLES.NORMAL,
+            new Date().toISOString()
         )
 
         await this.userDatabase.insertUser(user.toDBModel())
@@ -54,7 +54,7 @@ export class UserBusiness {
 
         const userDB = await this.userDatabase.findUserByEmail(email)
 
-        if(!userDB) {
+        if (!userDB) {
             throw new NotFoundError("email não foi cadastrado")
         }
 
@@ -71,7 +71,7 @@ export class UserBusiness {
 
         const isPasswordCorrect = await this.hashManager.compare(password, hashedPassword)
 
-        if(!isPasswordCorrect) {
+        if (!isPasswordCorrect) {
             throw new UnauthorizedError('e-amil e/ou senha inválido(s)')
         }
 

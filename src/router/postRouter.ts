@@ -18,3 +18,6 @@ const postController = new PostController(
 postRouter.post("/", postController.createPost)
 postRouter.get("/", postController.getPosts)
 postRouter.put("/:id", postController.editPost)
+postRouter.delete("/:id", postController.deletePost)
+
+postRouter.put("/:id/like", postController.likeOrDislikePost)
