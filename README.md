@@ -29,6 +29,21 @@ https://documenter.getpostman.com/view/26589685/2s9Y5ZuMTa
     - [ ]  identificação UUID
     - [ ]  senhas hasheadas com Bcrypt
     - [ ]  tokens JWT
+
+## Como rodar este projeto?
+```bash
+# Clone este repositório
+$ git clone linkrepo
+
+# Acesse a pasta do projeto no seu terminal
+cd projeto-labook-backend
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação
+$ npm run dev
+```
  
 ## Tecnologias utilizadas
 1. [NodeJS](https://nodejs.org/)
